@@ -336,6 +336,7 @@ strong {
 -----------------------------------------*/
 .video-wrap {
   z-index: -100;
+  bottom:0
 }
 
 .custom-video {
