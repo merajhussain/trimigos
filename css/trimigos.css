@@ -336,7 +336,7 @@ strong {
 -----------------------------------------*/
 .video-wrap {
   z-index: -100;
-  bottom:0
+  object-fit: cover;
 }
 
 .custom-video {
@@ -345,7 +345,7 @@ strong {
   left: 0;
   
    max-width: 100%; 
-  height: auto;
+  min-height: 100%;
    
 }
 
