@@ -51,7 +51,7 @@ https://templatemo.com/tm-583-festava-live
           }
       
           // Add click event handler for the "Services" link
-          $('.click-scroll[href="#section_3"]').on('click', function (event) {
+          $('.click-scroll[href="#Services"]').on('click', function (event) {
             event.preventDefault();
       
             // Toggle the 'loaded' class when clicking on the link
@@ -82,7 +82,7 @@ https://templatemo.com/tm-583-festava-live
 
             // Add scroll event handler to check if "Services" section is in viewport
             $(window).on('scroll', function () {
-                var servicesSection = $('#section_3');
+                var servicesSection = $('#Services');
 
                 if (isInViewport(servicesSection)) {
                     applyZoomInEffect();
@@ -90,7 +90,7 @@ https://templatemo.com/tm-583-festava-live
             });
 
             // Optionally, you can trigger the zoom-in effect immediately if the section is initially in the viewport
-            if (isInViewport($('#section_3'))) {
+            if (isInViewport($('#Services'))) {
                 applyZoomInEffect();
             }
         });
@@ -133,20 +133,20 @@ https://templatemo.com/tm-583-festava-live
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            <a class="nav-link click-scroll" href="#Home">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                            <a class="nav-link click-scroll" href="#About">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Services</a>
+                            <a class="nav-link click-scroll" href="#Services">Services</a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="#Contact">Contact</a>
                         </li>
                     </ul>
 
@@ -156,7 +156,7 @@ https://templatemo.com/tm-583-festava-live
         </nav>
 
 
-        <section class="hero-section" id="section_1">
+        <section class="hero-section" id="Home">
             <!-- <div class="section-overlay"></div>-->
 
 
@@ -170,7 +170,7 @@ https://templatemo.com/tm-583-festava-live
         </section>
 
 
-        <section class="about-section section-padding" id="section_2">
+        <section class="about-section section-padding" id="About">
             <div class="container">
                 <div class="row">
 
@@ -231,7 +231,7 @@ https://templatemo.com/tm-583-festava-live
         </section>
 
 
-        <section class="services-section section-padding" id="section_3">
+        <section class="services-section section-padding" id="Services">
             <div class="container">
                 <div class="row justify-content-center">
 
@@ -381,7 +381,7 @@ https://templatemo.com/tm-583-festava-live
 
 
 
-        <section class="contact-section section-padding" id="section_6">
+        <section class="contact-section section-padding" id="Contact">
             <div class="container">
                 <div class="row">
 
@@ -527,19 +527,19 @@ https://templatemo.com/tm-583-festava-live
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#section_1" class="site-footer-link">Home</a>
+                            <a href="#Home" class="site-footer-link">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_2" class="site-footer-link">About</a>
+                            <a href="#About" class="site-footer-link">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_3" class="site-footer-link">services</a>
+                            <a href="#Services" class="site-footer-link">services</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_6" class="site-footer-link">Contact</a>
+                            <a href="#Contact" class="site-footer-link">Contact</a>
                         </li>
                     </ul>
                 </div>
