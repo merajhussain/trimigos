@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>Trimigos Technologies Pvt LTD</title>
-	<link rel="icon" type="image/x-icon" href="images/3migos.png">
+    <link rel="icon" type="image/x-icon" href="images/3migos.png">
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,7 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
 
     <link href="css/trimigos.css" rel="stylesheet">
+    <!-- Add the jQuery library (you can host it or download it locally) -->
 
     <!--
 
@@ -34,38 +35,88 @@ https://templatemo.com/tm-583-festava-live
 </head>
 
 <body>
-    <div id="loader" class="center">
-        <img src= 
-"images/3migos.png" height=100 width=100/> 
-   <script src="js/logoloader.js"></script>
-    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- <script>
+        $(document).ready(function () {
+          // Function to handle zoom-in effect
+          function applyZoomInEffect() {
+            $('.zoom-in-onload').addClass('loaded');
+          }
+      
+          // Add click event handler for the "Services" link
+          $('.click-scroll[href="#section_3"]').on('click', function (event) {
+            event.preventDefault();
+      
+            // Toggle the 'loaded' class when clicking on the link
+            $('.zoom-in-onload').toggleClass('loaded');
+      
+            // Optionally, you can delay the zoom-in effect by a short time
+            setTimeout(applyZoomInEffect, 1000);
+       
+        });
+  });
+</script> -->
+
+    <script>
+        $(document).ready(function () {
+            // Function to handle zoom-in effect
+            function applyZoomInEffect() {
+                $('.zoom-in-onload').addClass('loaded');
+            }
+
+            // Function to check if the "Services" section is in the viewport
+            function isInViewport(element) {
+                var elementTop = element.offset().top;
+                var elementBottom = elementTop + element.outerHeight();
+                var viewportTop = $(window).scrollTop();
+                var viewportBottom = viewportTop + $(window).height();
+                return elementBottom > viewportTop && elementTop < viewportBottom;
+            }
+
+            // Add scroll event handler to check if "Services" section is in viewport
+            $(window).on('scroll', function () {
+                var servicesSection = $('#section_3');
+
+                if (isInViewport(servicesSection)) {
+                    applyZoomInEffect();
+                }
+            });
+
+            // Optionally, you can trigger the zoom-in effect immediately if the section is initially in the viewport
+            if (isInViewport($('#section_3'))) {
+                applyZoomInEffect();
+            }
+        });
+    </script>
+
     <main>
 
-           <header class="site-header">
-           <div class="container">
+        <header class="site-header">
+            <div class="container">
                 <div class="row">
 
-                   <div class="col-lg-12 col-12 d-flex flex-wrap">
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
-                            
-                            
-							<img src="images/3migos.png" height=40 width=70>
-                        </p> 
-						
-                    </div> 
+
+
+                            <img src="images/3migos.png" height=40 width=70>
+                        </p>
+
+                    </div>
 
                 </div>
             </div>
-        </header>  
+        </header>
 
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-              <!--  <a class="navbar-brand" href="index.html">
+                <!--  <a class="navbar-brand" href="index.html">
                     Trimigos
                 </a>-->
 
-                
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,107 +137,218 @@ https://templatemo.com/tm-583-festava-live
                             <a class="nav-link click-scroll" href="#section_3">Services</a>
                         </li>
 
-                       
+
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_6">Contact</a>
                         </li>
                     </ul>
 
-                   
+
                 </div>
             </div>
         </nav>
-  <!-- mrge test-->
+
 
         <section class="hero-section" id="section_1">
-           <!-- <div class="section-overlay"></div>-->
+            <!-- <div class="section-overlay"></div>-->
 
-            
+
             <div class="video-wrap">
                 <video playsinline autoplay="" loop="" muted="" class="custom-video" poster="">
                     <source src="video/3migos.mp4" type="video/mp4">
 
                     Your browser does not support the video tag.
                 </video>
-            </div> 
+            </div>
         </section>
 
 
         <section class="about-section section-padding" id="section_2">
             <div class="container">
-                 <div class="row">
+                <div class="row">
 
-                   <!-- <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                    <!-- <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">-->
-                            <h2 class="text-white mb-4">About Us</h2>
+                    <h2 class="text-white mb-4">About Us</h2>
 
-                            <p class="text-white">Trimigos is a customer success-oriented company aimed to provide strategic consulting and managed services, along with innovation has become a key partner for enterprises in their path to digital business transformation.</p>
-							<p class="text-white">Trimigos founded in 2022 headquartered at Hyderabad is all about 3 Amigos Customer, Employer and Employee.</p>
-                            <h6 class="text-white mt-4">Why Choose Us?</h6>
+                    <p class="text-white">Trimigos is a customer success-oriented company aimed to provide strategic
+                        consulting and managed services, along with innovation has become a key partner for enterprises
+                        in their path to digital business transformation.</p>
+                    <p class="text-white">Trimigos founded in 2022 headquartered at Hyderabad is all about 3 Amigos
+                        Customer, Employer and Employee.</p>
+                    <h6 class="text-white mt-4">Why Choose Us?</h6>
 
-                           
-					        <p class="text-white">Experience: With years of experience across diverse industries, we possess the knowledge and expertise to guide your digital transformation journey.</p>                         
-							<p class="text-white">Collaborative Approach: We work closely with your team, fostering a collaborative partnership that enables us to deliver solutions aligned with your vision.</p>
-							<h6 class="text-white mt-4">What is Our Approach?</h6>
-                            <p class="text-white">Strategize: Our team of seasoned experts collaborates closely with your organization to create a tailor-made digital transformation strategy. We identify key business goals, challenges, and opportunities to craft a roadmap that ensures seamless integration of digital technologies.</p>
-							<p class="text-white">Innovate: Harnessing the latest advancements, we help you implement cutting-edge technologies such as AI, IoT, cloud computing, and data analytics to optimize operations, enhance customer experiences, and enable new revenue streams.</p>
-							<p class="text-white">Adapt: Change is constant in the digital realm. We assist you in embracing agility, fostering a culture of innovation, and adapting swiftly to emerging trends. Our solutions are scalable and flexible, ensuring you stay ahead of the curve.</p>
-							<p class="text-white">Optimize: Our team focuses on enhancing efficiency and productivity across your entire organization. From streamlining workflows to automating processes, we ensure every aspect of your business benefits from the digital transformation.</p>
-                    
-            </div>
+
+                    <p class="text-white">Experience: With years of experience across diverse industries, we possess the
+                        knowledge and expertise to guide your digital transformation journey.</p>
+                    <p class="text-white">Collaborative Approach: We work closely with your team, fostering a
+                        collaborative partnership that enables us to deliver solutions aligned with your vision.</p>
+                    <h6 class="text-white mt-4">What is Our Approach?</h6>
+                    <p class="text-white">Strategize: Our team of seasoned experts collaborates closely with your
+                        organization to create a tailor-made digital transformation strategy. We identify key business
+                        goals, challenges, and opportunities to craft a roadmap that ensures seamless integration of
+                        digital technologies.</p>
+                    <p class="text-white">Innovate: Harnessing the latest advancements, we help you implement
+                        cutting-edge technologies such as AI, IoT, cloud computing, and data analytics to optimize
+                        operations, enhance customer experiences, and enable new revenue streams.</p>
+                    <p class="text-white">Adapt: Change is constant in the digital realm. We assist you in embracing
+                        agility, fostering a culture of innovation, and adapting swiftly to emerging trends. Our
+                        solutions are scalable and flexible, ensuring you stay ahead of the curve.</p>
+                    <p class="text-white">Optimize: Our team focuses on enhancing efficiency and productivity across
+                        your entire organization. From streamlining workflows to automating processes, we ensure every
+                        aspect of your business benefits from the digital transformation.</p>
+                    <!--   </div>
+                    </div>-->
+
+                    <!--<div class="col-lg-6 col-12">
+                       <!-- <div class="about-text-wrap">-->
+                    <!-- <img src="images/pexels-alexander-suhorucov-6457579.jpg" class="about-image img-fluid">-->
+
+                    <!--<div class="about-text-info d-flex">
+                               <!-- <div class="d-flex">
+                                    <i class="about-text-icon bi-person"></i>
+                                </div>-->
+
+
+                    <!-- <div class="ms-4">
+                                    <h3>a happy moment</h3>
+
+                                    <p class="mb-0">your amazing festival experience with us</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+                </div>
         </section>
 
 
-       <section class="services-section section-padding" id="section_3">
-              <div class="container">
+        <section class="services-section section-padding" id="section_3">
+            <div class="container">
                 <div class="row justify-content-center">
 
                     <div class="col-12 text-center">
                         <h2 class="mb-4">Our Services</h1>
                     </div>
 
-                    <div class="col-lg-5 col-12">
-                        <div class="services-thumb">
-                            <div class="services-image-wrap">
-                                <img src="images/services/sw-dev.jpg"
-                                    class="services-image img-fluid">
+                
+                    <div class="col-lg-4 col-12">
+                        <div class="services-thumb1 zoom-in-onload">
+                            <div class="services-image-wrap1">
+                                <img src="images/services/sw-dev.jpg" class="services-image1 img-fluid1">
+                                <div class="overlay-maintext">
+                                    <div>Software Development</div>
+                                   
+                                </div>
+
+                                <div class="overlay-textdisplay">
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                   
+                                </div>
                             </div>
 
-                            <div class="services-hover">
-							<h6> Software Development <h6>
-							    <hr>
-								
-                                <p>
-                                    <strong>Backend Development</strong>
-                                    
-                                </p>
-
-                                <p>
-                                    <strong>Front End Development</strong>
-                                    
-                                </p>
-
-                                <p>
-                                    <strong>Full Stack Development</strong>
-                                   
-                                </p>
-								
-								<p>
-                                    <strong>Mobile Application development</strong>
-                                   
-                                </p>
-
-                                
-
-                                
-                            </div>
                         </div>
                     </div>
-                    
 
 
                     
-                   <!--     <div class="services-thumb">
+                    <div class="col-lg-4 col-12">
+                        <div class="services-thumb1 zoom-in-onload">
+                            <div class="services-image-wrap1">
+                                <img src="images/services/sw-dev.jpg" class="services-image1 img-fluid1">
+                                <div class="overlay-maintext">
+                                    <div>Digital Transformation Services</div>
+                                   
+                                </div>
+
+                                <div class="overlay-textdisplay">
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+                        <div class="services-thumb1 zoom-in-onload">
+                            <div class="services-image-wrap1">
+                                <img src="images/services/sw-dev.jpg" class="services-image1 img-fluid1">
+                                <div class="overlay-maintext">
+                                    <div>Data Analytics and Business INtelligence</div>
+                                   
+                                </div>
+
+                                <div class="overlay-textdisplay">
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+                        <div class="services-thumb1 zoom-in-onload">
+                            <div class="services-image-wrap1">
+                                <img src="images/services/sw-dev.jpg" class="services-image1 img-fluid1">
+                                <div class="overlay-maintext">
+                                    <div>Managed IT Services</div>
+                                   
+                                </div>
+
+                                <div class="overlay-textdisplay">
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+                        <div class="services-thumb1 zoom-in-onload">
+                            <div class="services-image-wrap1">
+                                <img src="images/services/sw-dev.jpg" class="services-image1 img-fluid1">
+                                <div class="overlay-maintext">
+                                    <div>IT INfrastructure Management</div>
+                                   
+                                </div>
+
+                                <div class="overlay-textdisplay">
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover"> Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                    <div class="onHover">Software Development</div>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    
+
+
+                    <!--     <div class="services-thumb">
                             <img src="images/services/dig-trans.jpg"
                                 class="services-image img-fluid">
 
@@ -216,13 +378,13 @@ https://templatemo.com/tm-583-festava-live
 
                 </div>
             </div> -->
- 
- 
-			
-        </section> 
 
 
-       
+
+        </section>
+
+
+
 
 
 
@@ -276,24 +438,26 @@ https://templatemo.com/tm-583-festava-live
                                             id="contact-message" placeholder="Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
-										 <script src="https://smtpjs.com/v3/smtp.js">
-										<script type="text/javascript">
-        function sendEmail() {
-            Email.send({
-                Host: "smtp.office365.com",
-                Username: "meraj@3migostech.com",
-                Password: "Meru@startup1",
-                To: 'meraj@3migostech.com',
-                From: "meraj@3migostech.com",
-                Subject: "website build 50%",
-                Body: "website build 50%",
-            })
-                .then(function (message) {
-                    alert("mail sent successfully")
-                });
+                                            <script src="https://smtpjs.com/v3/smtp.js">
+                                                <script type="text/javascript">
+
+                                                    function sendEmail() {
+                                                        Email.send({
+                                                            Host: "smtp.office365.com",
+                                                            Username: "meraj@3migostech.com",
+                                                            Password: "Meru@startup1",
+                                                            To: 'meraj@3migostech.com',
+                                                            From: "meraj@3migostech.com",
+                                                            Subject: "website build 50%",
+                                                            Body: "website build 50%",
+                                                        })
+                                                            .then(function (message) {
+                                                                alert("mail sent successfully")
+                                                            });
         }
-    </script>
-                                            <button type="submit" class="form-control" onclick="sendEmail()" >Send message</button>
+                                            </script>
+                                            <button type="submit" class="form-control" onclick="sendEmail()">Send
+                                                message</button>
                                         </div>
                                     </div>
                                 </form>
@@ -317,7 +481,7 @@ https://templatemo.com/tm-583-festava-live
 
 
     <footer class="site-footer">
-      <!--  <div class="site-footer-top">
+        <!--  <div class="site-footer-top">
             <div class="container">
                 <div class="row">
 
@@ -380,7 +544,7 @@ https://templatemo.com/tm-583-festava-live
                         <li class="site-footer-link-item">
                             <a href="#section_3" class="site-footer-link">services</a>
                         </li>
- 
+
                         <li class="site-footer-link-item">
                             <a href="#section_6" class="site-footer-link">Contact</a>
                         </li>
@@ -398,7 +562,7 @@ https://templatemo.com/tm-583-festava-live
 
                     <p class="text-white d-flex">
                         <a href="mailto: info@3migostech.com" class="site-footer-link">
-                             info@3migostech.com
+                            info@3migostech.com
                         </a>
                     </p>
                 </div>
@@ -409,7 +573,7 @@ https://templatemo.com/tm-583-festava-live
                     <p class="text-white d-flex mt-3 mb-2">
                         #1005,Asian Suncity, Kondapur,Hyderabad,India</p>
 
-                     
+
                 </div>
             </div>
         </div>
@@ -425,7 +589,7 @@ https://templatemo.com/tm-583-festava-live
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                             
+
                         </ul>
                     </div>
                 </div>
@@ -445,6 +609,7 @@ T e m p l a t e M o
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
     <script src="js/custom.js"></script>
+
 
 </body>
 

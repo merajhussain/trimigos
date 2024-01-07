@@ -922,51 +922,6 @@ strong {
 }
 
 
-#loader { 
-  border: 16px solid #f3f3f3; 
-  /* Light grey */ 
-  border-top: 16px solid #f0ed6a; 
-  /* Dark Green */ 
-  border-radius: 50%; 
-  width: 120px; 
-  height: 120px; 
-  animation: spinloader 2s linear infinite; 
-} 
-.center {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-
-}
-.loader img { 
-  height: 120px; 
-  width: 120px; 
-  animation: spinlogo 2s linear infinite; 
-} 
-
-@keyframes spinloader { 
-  0% { 
-      transform: rotate(0deg); 
-  } 
-
-  100% { 
-      transform: rotate(360deg); 
-  } 
-} 
-
-@keyframes spinlogo { 
-  0% { 
-      transform: rotate(360deg); 
-  } 
-
-  100% { 
-      transform: rotate(0deg); 
-  } 
-} 
-
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
@@ -1014,6 +969,7 @@ strong {
 
   .hero-section {
     padding-top: 150px;
+    height: calc(100vh - 438px);
   }
 
   .pricing-thumb {
@@ -1070,4 +1026,128 @@ strong {
     font-size: 20px;
   }
 }
+
+
+
+.zoom-in-onload {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 0.1s ease-out, transform 0.9s ease-out;
+}
+
+.zoom-in-onload.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* /////////////////////////////////////////////////////////// */
+
+/* Styling for the background image */
+.services-image-wrap1 {
+  position: relative;
+  width: 100%;
+  padding-bottom: 0%; /* Adjust the aspect ratio as needed */
+  overflow: hidden;
+}
+
+/* Styling for the curved border and the image */
+.services-image1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px; /* Adjust the border-radius value for curved edges */
+}
+
+.overlay-maintext {
+  position: absolute;
+  top: 18%;
+  background: rgba(248, 203, 46, 0.75);
+  font-size: 11px;
+  border-radius: 68px;
+  padding: 7px;
+  color: black;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+  color: black;
+  width: 92%;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.overlay-maintext h6 {
+  margin-bottom: 10px;
+}
+
+.overlay-maintext hr {
+  width: 50%; /* Adjust the width of the horizontal line */
+  margin: 10px auto; /* Adjust the margin as needed */
+  border: 1px solid #ffee58; /* Set the light yellow color of the horizontal line */
+}
+
+/* Styling for the button */
+.overlay-maintext button {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+
+.services-thumb1:hover .overlay-content { 
+  opacity: 0;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 767px) {
+  .services-thumb1 .overlay-maintext {
+    left: 5%;
+    transform: none;
+    opacity: 1;
+    top: 6%;
+  }
+}
+
+.services-thumb1 {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.services-thumb1:hover .overlay-textdisplay {
+  transform: translateY(0);
+  opacity: 1;
+  top: 32%;
+  left: 5%;
+}
+
+.overlay-textdisplay {
+  position: absolute;
+  top: 70%;
+  background: rgba(248, 203, 46, 0.75);
+  font-size: 11px;
+  border-radius: 7px;
+  padding: 7px;
+  color: black;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+  color: black;
+  width: 92%;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 0.5s ease;
+  transform: translateY(100%);
+  position: absolute;
+}
+
+.onHover{
+  margin-left: auto;
+}
+.onHover:hover{
+color: #ffff;
+cursor: pointer;
+}
+
+
+
+
+
 
