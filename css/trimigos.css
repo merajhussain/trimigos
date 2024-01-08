@@ -997,8 +997,11 @@ strong {
   .section-padding {
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-top: 0px;
+  } 
+  .site-header {
+    padding-bottom: 53px ;
   }
-  
   .navbar {
     background-color: var(--dark-color);
   }
@@ -1013,7 +1016,7 @@ strong {
 
   .hero-section {
     padding-top: 150px;
-    height: calc(100vh - 438px);
+    height: unset;
   }
 
   .pricing-thumb {
@@ -1116,7 +1119,7 @@ strong {
   color: black;
   width: 92%;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .overlay-maintext h6 {
@@ -1176,7 +1179,7 @@ strong {
   color: black;
   width: 92%;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
   transition: all 0.5s ease;
   transform: translateY(100%);
   position: absolute;
