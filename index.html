@@ -433,26 +433,25 @@
                                             id="contact-message" placeholder="Message"></textarea>
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                            <script src="https://smtpjs.com/v3/smtp.js">
+                                            
                                                 <script type="text/javascript">
 
-                                                    function sendEmail() {
-                                                        Email.send({
-                                                            Host: "smtp.office365.com",
-                                                            Username: "meraj@3migostech.com",
-                                                            Password: "Meru@startup1",
-                                                            To: 'meraj@3migostech.com',
-                                                            From: "meraj@3migostech.com",
-                                                            Subject: "website build 50%",
-                                                            Body: "website build 50%",
-                                                        })
-                                                            .then(function (message) {
-                                                                alert("mail sent successfully")
-                                                            });
-        }
+                                                    function reqListener() {
+                                                        console.log("Mail Sent successfully");
+                                                          }
+                                                     function sendEmail()
+                                                     {
+                                                        var xhttp = new XMLHttpRequest();
+
+                                                        xhttp.addEventListener("load", reqListener);
+                                                        xhttp.open("POST", "http://localhost:8292/sendEmail", false);
+                                                        xhttp.send();
+                                                     }
+                                               
                                             </script>
                                             <button type="submit" class="form-control" onclick="sendEmail()">Send
                                                 message</button>
+                                                
                                         </div>
                                     </div>
                                 </form>
