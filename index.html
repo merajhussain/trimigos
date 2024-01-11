@@ -411,7 +411,7 @@
                             <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
                                 aria-labelledby="nav-ContactForm-tab">
                                 <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                                    role="form">
+                                    role="form" onsubmit="return sendEmail(event)">
                                     <div class="contact-form-body">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-12">
@@ -434,27 +434,50 @@
 
                                         <div class="col-lg-4 col-md-10 col-8 mx-auto">
                                             
-                                                <script type="text/javascript">
-
-                                                    function reqListener() {
-                                                        console.log("Mail Sent successfully");
-                                                          }
-                                                     function sendEmail()
-                                                     {
-                                                        var xhttp = new XMLHttpRequest();
-
-                                                        xhttp.addEventListener("load", reqListener);
-                                                        xhttp.open("POST", "http://localhost:8292/sendEmail", false);
-                                                        xhttp.send();
-                                                     }
                                                
-                                            </script>
-                                            <button type="submit" class="form-control" onclick="sendEmail()">Send
+                                            <button type="submit" class="form-control" onclick="sendEmail(event)">Send
                                                 message</button>
                                                 
                                         </div>
                                     </div>
                                 </form>
+                                <script type="text/javascript">
+
+                                    
+                                    function reqListener() {
+                                        console.log("Mail Sent successfully");
+                                          }
+                                     function sendEmail(event)
+                                     {
+                                         
+
+                                         
+                                         event.preventDefault();
+                                         const contactName = document.getElementById("contact-name").value;
+                                         const contactEmail = document.getElementById("contact-email").value;
+                                      
+                                         const contactCompany = document.getElementById("contact-company").value;
+                                         const contactMessage = document.getElementById("contact-message").value;
+                                          const formBody = new Map();
+                                          formBody.set("name",contactName);
+                                          formBody.set("emailAddress",contactEmail);
+                                          formBody.set("companyName",contactCompany);
+                                          formBody.set("Message",contactMessage);
+
+                                          var xhttp = new XMLHttpRequest();
+
+                                         xhttp.addEventListener("load", reqListener);
+                                         xhttp.open("POST", "http://ec2-43-205-211-180.ap-south-1.compute.amazonaws.com:8292/sendEmail", false);
+                                         xhttp.setRequestHeader("Content-Type","application/json");
+                                         xhttp.setRequestHeader("Access-Control-Allow-Origin","*");
+                                     
+                                         var body=JSON.stringify(Object.fromEntries(formBody));
+                                         xhttp.send(body);
+
+                                        return true;
+                                     }
+                               
+                            </script>
                             </div>
 
                             <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
