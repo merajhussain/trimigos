@@ -464,6 +464,7 @@
 
                                          xhttp.addEventListener("load", reqListener);
                                          xhttp.open("GET", "https://3migostech.com/sendemail", false);
+                                         xhttp.setRequestHeader('Access-Control-Allow-Origin','*');
                                          xhttp.setRequestHeader('cust-name',contactName);
                                          xhttp.setRequestHeader('cust-company',contactCompany);
                                          xhttp.setRequestHeader('cust-email',contactEmail);
