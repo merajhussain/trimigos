@@ -20,6 +20,7 @@
 
     <link href="css/trimigos.css" rel="stylesheet">
     <style>
+ 
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -42,6 +43,24 @@
             margin-bottom: 4em;
         }
 
+        h1::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background-color: #f0ed6a;
+            animation: underline 1s forwards;
+             text-align: center;
+        }
+        h1 {
+            color: #333;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.5em;
+        }
+
         h2 {
             color: #333;
             position: relative;
@@ -56,7 +75,7 @@
             left: 0;
             width: 50%;
             height: 2px;
-            background-color: #3498db;
+            background-color: #f0ed6a;
             animation: underline 1s forwards;
             transform-origin: bottom right;
         }
@@ -104,7 +123,7 @@
 
                        
                         <img src="images/3migos.png" height=40 width=70>
-                        <h2 >Software Development</h2>
+                        <div > <h1>Software Development Services</h1>  </div>
                     </p>
 
                 </div>
@@ -128,7 +147,13 @@
 
         <section>
             <h2>Backend Development</h2>
-            <p>We at Trimigos excel in providing robust mobile backend development support, ensuring the seamless functionality and performance of your mobile applications. With expertise in server-side technologies such as Node.js, Django, Flask, and more, we architect scalable and secure backend systems. Our dedicated team focuses on optimizing data storage, managing APIs, and implementing server logic to enhance the overall efficiency of your mobile app. Count on us to deliver tailored backend solutions that empower your mobile applications with real-time updates, secure authentication, and efficient data management, ensuring a superior user experience.</p>
+            <p>As a leading software company, we specialize in offering comprehensive backend development support to empower your applications. Our skilled team adeptly handles server-side technologies like Node.js, Python, and Ruby on Rails to create robust and scalable backend systems. We focus on optimizing database management, implementing APIs, and ensuring seamless communication between frontend and backend components. With security and performance as top priorities, our backend development services contribute to the reliability and efficiency of your software solutions. Partner with us for tailored backend support that aligns with your project's unique requirements and objectives.
+            </p>
+        </section>
+        <section>
+            <h2>Enterprise Application Development and Support</h2>
+            <p>At our software  company, we specialize in delivering cutting-edge Enterprise Application Development and Support services. Our dedicated team leverages the latest technologies and industry best practices to craft scalable and tailored solutions for your business needs. From conceptualization to deployment, we provide end-to-end support, ensuring the seamless integration and efficiency of your enterprise applications. With a commitment to quality and innovation, we empower organizations to streamline processes, enhance collaboration, and achieve their strategic goals through our comprehensive Enterprise Application Development and Support services. Trust us to be your partner in optimizing and future-proofing your business operations.
+            </p>
         </section>
     </main>
 
