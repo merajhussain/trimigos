@@ -245,10 +245,10 @@
 
                                 <div class="overlay-textdisplay">
                                   
-                                    <div class="onHover" ><a href="softwaredev.html">Backend Development</a></div>
-                                    <div class="onHover"><a href="softwaredev.html">Full stack Development</a></div>
-                                    <div class="onHover"><a href="softwaredev.html">Mobile Application Development</a></div>
-                                    <div class="onHover"><a href="softwaredev.html">Enterprise Application Development</a></div>
+                                    <div class="onHover" ><a href="softwaredev.html#mad">Backend Development</a></div>
+                                    <div class="onHover"><a href="softwaredev.html#fsd">Full stack Development</a></div>
+                                    <div class="onHover"><a href="softwaredev.html#bad">Mobile Application Development</a></div>
+                                    <div class="onHover"><a href="softwaredev.html#eads">Enterprise Application Development</a></div>
                                    
                                 </div>
                             </div>
@@ -466,6 +466,7 @@
 
                                          xhttp.addEventListener("load", reqListener);
                                          xhttp.open("GET", "https://3migostech.com/sendemail", false);
+                                         xhttp.setRequestHeader('Access-Control-Allow-Origin','https://www.3migostech.com'); 
                                          xhttp.setRequestHeader('cust-name',contactName);
                                          xhttp.setRequestHeader('cust-company',contactCompany);
                                          xhttp.setRequestHeader('cust-email',contactEmail);
